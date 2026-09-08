@@ -10,6 +10,27 @@
         <link rel="stylesheet" href="./assets/css/styles.css">
     </head>
 
+    <div id="modal-como-jogar" class="modal">
+        <div class="modal-conteudo">
+            <button id="fechar-modal" class="fechar-modal">×</button>
+
+            <h2>Como jogar</h2>
+
+            <p>
+                Escolha uma letra por vez e tente descobrir o animal
+                antes de completar 6 erros.
+            </p>
+
+            <p>
+                A cada rodada, os jogadores se alternam.
+            </p>
+
+            <p>
+                Quem descobrir a palavra ganha 1 ponto.
+            </p>
+        </div>
+    </div>
+
     <body>
         <main class="game">
 
@@ -32,9 +53,63 @@
             </section>
 
             <section class="forca">
-                <div id="desenho-forca">
-                    <!-- O desenho da forca será feito depois -->
-                </div>
+                <svg id="desenho-forca" width="220" height="250" viewBox="0 0 220 250">
+
+                    <!-- Estrutura da forca -->
+                    <line x1="30" y1="230" x2="190" y2="230" class="estrutura-forca" />
+                    <line x1="60" y1="230" x2="60" y2="20" class="estrutura-forca" />
+                    <line x1="60" y1="20" x2="150" y2="20" class="estrutura-forca" />
+                    <line x1="150" y1="20" x2="150" y2="50" class="estrutura-forca" />
+
+                    <!-- Corpo -->
+                    <g id="boneco">
+
+                    <circle id="cabeca"
+                            cx="150"
+                            cy="70"
+                            r="20"
+                            class="parte-corpo" />
+
+                    <line id="corpo"
+                        x1="150" y1="90"
+                        x2="150" y2="150"
+                        class="parte-corpo" />
+
+                    <line id="braco-esquerdo"
+                        x1="150" y1="105"
+                        x2="120" y2="130"
+                        class="parte-corpo" />
+
+                    <line id="braco-direito"
+                        x1="150" y1="105"
+                        x2="180" y2="130"
+                        class="parte-corpo" />
+
+                    <line id="perna-esquerda"
+                        x1="150" y1="150"
+                        x2="125" y2="190"
+                        class="parte-corpo" />
+
+                    <line id="perna-direita"
+                        x1="150" y1="150"
+                        x2="175" y2="190"
+                        class="parte-corpo" />
+
+                    <!-- Olho esquerdo em X -->
+                    <g id="olho-x-esquerdo" class="olhos-morto">
+                        <line x1="139" y1="64" x2="145" y2="70" />
+                        <line x1="145" y1="64" x2="139" y2="70" />
+                    </g>
+
+                    <!-- Olho direito em X -->
+                    <g id="olho-x-direito" class="olhos-morto">
+                        <line x1="155" y1="64" x2="161" y2="70" />
+                        <line x1="161" y1="64" x2="155" y2="70" />
+                    </g>
+
+                </g>
+
+                </svg>
             </section>
 
             <section class="palavra">
@@ -91,12 +166,16 @@
             </section>
             
             <section class="controles">
-                <button id="botao-proxima-rodada" type="button">
+                <button id="botao-proxima-rodada" type="button" style="display: none;">
                     Próxima rodada
                 </button>
 
                 <button id="botao-reiniciar" type="button">
                     Reiniciar jogo
+                </button>
+
+                <button id="como-jogar" type="button">
+                    Como jogar
                 </button>
             </section>
 
