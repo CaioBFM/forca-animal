@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Forca Animal</title>
+
+        <link rel="stylesheet" href="./assets/css/styles.css">
+    </head>
+
+    <body>
+        <main class="game">
+
+            <h1>Forca Animal</h1>
+
+            <section class="placar">
+                <p>
+                    Jogador 1:
+                    <span id="pontos-jogador-1">0</span>
+                </p>
+
+                <p>
+                    Jogador 2:
+                    <span id="pontos-jogador-2">0</span>
+                </p>
+            </section>
+
+            <section class="rodada">
+                <h2 id="jogador-atual">Vez do Jogador 1</h2>
+            </section>
+
+            <section class="forca">
+                <div id="desenho-forca">
+                    <!-- O desenho da forca será feito depois -->
+                </div>
+            </section>
+
+            <section class="palavra">
+                <p id="palavra-secreta">
+                    _ _ _ _ _ _
+                </p>
+            </section>
+
+            <section class="informacoes">
+                <p>
+                    Erros:
+                    <span id="quantidade-erros">0</span>/6
+                </p>
+
+                <p>
+                    Letras erradas:
+                    <span id="letras-erradas">Nenhuma</span>
+                </p>
+            </section>
+
+            <section class="teclado">
+                <button type="button">A</button>
+                <button type="button">B</button>
+                <button type="button">C</button>
+                <button type="button">D</button>
+                <button type="button">E</button>
+                <button type="button">F</button>
+                <button type="button">G</button>
+                <button type="button">H</button>
+                <button type="button">I</button>
+                <button type="button">J</button>
+                <button type="button">K</button>
+                <button type="button">L</button>
+                <button type="button">M</button>
+                <button type="button">N</button>
+                <button type="button">O</button>
+                <button type="button">P</button>
+                <button type="button">Q</button>
+                <button type="button">R</button>
+                <button type="button">S</button>
+                <button type="button">T</button>
+                <button type="button">U</button>
+                <button type="button">V</button>
+                <button type="button">W</button>
+                <button type="button">X</button>
+                <button type="button">Y</button>
+                <button type="button">Z</button>
+            </section>
+
+            <section class="resultado">
+                <p id="mensagem-resultado"></p>
+
+                <p id="palavra-revelada"></p>
+            </section>
+            
+            <section class="controles">
+                <button id="botao-proxima-rodada" type="button">
+                    Próxima rodada
+                </button>
+
+                <button id="botao-reiniciar" type="button">
+                    Reiniciar jogo
+                </button>
+            </section>
+
+        </main>
+
+        <script src="./assets/js/script.js"></script>
+
+    </body>
+</html>
