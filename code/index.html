@@ -7,34 +7,49 @@
 
         <title>Forca Animal</title>
 
+        <link
+            rel="icon"
+            type="image/jpeg"
+            href="./assets/img/icone_jogo_forca.png"
+        >
+
         <link rel="stylesheet" href="./assets/css/styles.css">
     </head>
 
-    <div id="modal-como-jogar" class="modal">
-        <div class="modal-conteudo">
-            <button id="fechar-modal" class="fechar-modal">×</button>
-
-            <h2>Como jogar</h2>
-
-            <p>
-                Escolha uma letra por vez e tente descobrir o animal
-                antes de completar 6 erros.
-            </p>
-
-            <p>
-                A cada rodada, os jogadores se alternam.
-            </p>
-
-            <p>
-                Quem descobrir a palavra ganha 1 ponto.
-            </p>
-        </div>
-    </div>
-
     <body>
+
+        <div id="modal-como-jogar" class="modal">
+            <div class="modal-conteudo">
+                <button id="fechar-modal" class="fechar-modal">×</button>
+
+                <h2>Como jogar</h2>
+
+                <p>
+                    Escolha uma letra por vez e tente descobrir o animal
+                    antes de completar 6 erros.
+                </p>
+
+                <p>
+                    A cada rodada, os jogadores se alternam.
+                </p>
+
+                <p>
+                    Quem descobrir a palavra ganha 1 ponto.
+                </p>
+            </div>
+        </div>
+
         <main class="game">
 
-            <h1>Forca Animal</h1>
+            <header class="cabecalho">
+                <img
+                    src="./assets/img/icone_jogo_forca.png"
+                    alt="Logo do jogo Forca Animal"
+                    class="logo-jogo"
+                >
+
+                <h1>Forca Animal</h1>
+            </header>
 
             <section class="placar">
                 <p>
@@ -113,8 +128,7 @@
             </section>
 
             <section class="palavra">
-                <p id="palavra-secreta">
-                    _ _ _ _ _ _
+                <p id="palavra-secreta"> 
                 </p>
             </section>
 

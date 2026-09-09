@@ -138,7 +138,7 @@ function atualizarLetrasErradas() {
 }
 
 
-function verificarLetra(letra) {
+function verificarLetra(letra, botao) {
     if (rodadaEncerrada) {
         return;
     }
@@ -155,6 +155,9 @@ function verificarLetra(letra) {
 
     if (!palavraNormalizada.includes(letra)) {
         erros++;
+        botao.classList.add("tecla-errada");
+    } else {
+        botao.classList.add("tecla-correta");
     }
 
     mostrarPalavraEscondida();
@@ -172,7 +175,7 @@ function configurarTeclado() {
     botoes.forEach(botao => {
         botao.addEventListener("click", () => {
 
-            verificarLetra(botao.textContent);
+            verificarLetra(botao.textContent, botao);
 
             botao.disabled = true;
         });
@@ -194,6 +197,9 @@ function liberarTeclado() {
 
     botoes.forEach(botao => {
         botao.disabled = false;
+
+        botao.classList.remove("tecla-correta");
+        botao.classList.remove("tecla-errada");
     });
 }
 

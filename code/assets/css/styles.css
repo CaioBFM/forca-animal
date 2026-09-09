@@ -6,62 +6,112 @@
 
 body {
     min-height: 100vh;
+
     font-family: Arial, sans-serif;
-    background-color: #f3f3f3;
+
+    background-color: #eef5e9;
     color: #222;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 20px;
 }
 
 .game {
     width: 100%;
-    max-width: 700px;
-
-    background-color: white;
-
-    padding: 30px;
-
-    border-radius: 10px;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    padding: 20px 30px;
 
     text-align: center;
 }
 
 h1 {
     margin-bottom: 25px;
+
+    color: white;
+    background-color: #2f5d3a;
+
+    padding: 20px;
+
+    border-radius: 8px;
+
+    font-size: 32px;
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    padding: 12px 20px;
+
+    background-color: #2f5d3a;
+    color: white;
+}
+
+.logo-jogo {
+    width: 80px;
+    height: 80px;
+
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.cabecalho h1 {
+    margin: 0;
+    font-size: 32px;
 }
 
 .placar {
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 30px;
 
-    margin-bottom: 20px;
+    margin: 12px 0;
 
     font-size: 18px;
     font-weight: bold;
 }
 
+.placar p {
+    min-width: 180px;
+    padding: 10px 20px;
+
+    background-color: #dcebd8;
+
+    border: 2px solid #4f7f59;
+    border-radius: 8px;
+}
+
+.placar span {
+    font-size: 24px;
+    color: #2f5d3a;
+}
+
 .rodada {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .rodada h2 {
-    font-size: 20px;
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    background-color: #4f7f59;
+    color: white;
+
+    border-radius: 20px;
+
+    font-size: 18px;
 }
 
 .forca {
     width: 220px;
     height: 250px;
 
-    margin: 0 auto 20px;
+    margin: 10px auto 15px;
 
-    border: 1px solid #ccc;
+    background-color: white;
+
+    border: 2px solid #4f7f59;
+    border-radius: 10px;
 
     display: flex;
     justify-content: center;
@@ -83,21 +133,48 @@ h1 {
 }
 
 .palavra {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 #palavra-secreta {
     font-size: 30px;
     font-weight: bold;
-    letter-spacing: 6px;
+    letter-spacing: 7px;
+
+    color: #2f5d3a;
 }
 
 .informacoes {
-    margin-bottom: 20px;
+    margin-bottom: 12px;
 }
 
 .informacoes p {
-    margin: 8px 0;
+    margin: 4px 0;
+}
+
+.teclado button {
+    width: 42px;
+    height: 42px;
+
+    border: 2px solid #4f7f59;
+    border-radius: 6px;
+
+    background-color: white;
+    color: #2f5d3a;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.15s;
+}
+
+.teclado button:hover:not(:disabled) {
+    background-color: #4f7f59;
+    color: white;
+
+    transform: translateY(-2px);
 }
 
 .teclado {
@@ -105,9 +182,9 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
 
-    gap: 8px;
+    gap: 6px;
 
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .teclado button {
@@ -129,6 +206,16 @@ h1 {
     background-color: #dddddd;
 }
 
+.tecla-correta {
+    background-color: #c8e6c9 !important;
+    border-color: #4caf50 !important;
+}
+
+.tecla-errada {
+    background-color: #ffcdd2 !important;
+    border-color: #f44336 !important;
+}
+
 .resultado {
     min-height: 50px;
 
@@ -145,27 +232,31 @@ h1 {
 }
 
 .controles button {
-    padding: 10px 20px;
+    padding: 11px 22px;
 
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
 
-    background-color: #333;
+    background-color: #2f5d3a;
     color: white;
 
     font-size: 15px;
+    font-weight: bold;
 
     cursor: pointer;
+
+    transition: 0.15s;
 }
 
 .controles button:hover {
-    background-color: #555;
+    background-color: #4f7f59;
+    transform: translateY(-1px);
 }
 
 .teclado button:disabled {
     background-color: #cccccc;
     cursor: not-allowed;
-    opacity: 0.5;
+    opacity: 1;
 }
 
 .controles button:disabled {
@@ -233,8 +324,9 @@ h1 {
 }
 
 .fechar-modal {
-    position: top-right;
-
+    position: absolute;
+    top: 10px;
+    right: 15px;
 
     border: none;
     background: none;
@@ -269,13 +361,17 @@ h1 {
 @media (max-width: 600px) {
 
     .game {
-        padding: 20px 15px;
+        width: 100%;
+        padding: 20px 30px;
+
+        text-align: center;
     }
 
     .placar {
         gap: 20px;
         font-size: 16px;
     }
+
 
     .forca {
         width: 180px;
